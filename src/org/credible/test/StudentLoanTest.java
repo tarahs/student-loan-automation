@@ -26,8 +26,6 @@ public class StudentLoanTest {
     private  WebDriver driver;
     private WebDriverWait wait;
 
-
-
     @BeforeClass
     public void setup() {
         driver = TestData.getDriver();
@@ -40,7 +38,6 @@ public class StudentLoanTest {
     public void afterClass() {
         driver.quit();
     }
-
 
     /**
      * Assert Successful application launch
@@ -72,7 +69,6 @@ public class StudentLoanTest {
                 By.cssSelector("#root > div > div > div._2ZPgUqDs.ExHqkrHA > div:nth-child(1) > div > div > div.fixed-section-relative-wrapper._189b8407 > div:nth-child(1) > div._2TG9Sozx > div:nth-child(1) > div > div > div._2Ls7a0_K._1bLzy8wE > div._1YIZTP9I > div:nth-child(2) > button")).click();
 
     }
-
 
     /**
      * Fill all the fields in the education section
@@ -176,16 +172,6 @@ public class StudentLoanTest {
         if(optionsToSelect.size() > 0)
             optionsToSelect.get(index).click();
 
-    }
-
-    public boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        }
-        catch (org.openqa.selenium.NoSuchElementException e) {
-            return false;
-        }
     }
 
 }
