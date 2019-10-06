@@ -10,9 +10,12 @@ import java.util.Properties;
  */
 public class ConfigReader {
 
-    private static String chromePath;
-    private static String browser;
-    private static String firefoxPath;
+    private  static String chromePath;
+    private  static String browser;
+    private  static String firefoxPath;
+    private  static String email;
+    private  static String password;
+
 
     /**
      * Class constructor loads settings from the file and saves to fields
@@ -26,29 +29,39 @@ public class ConfigReader {
             System.out.println("Cant't read config.properties file!");
             return;
         }
-        Properties p = new Properties();
+        Properties property = new Properties();
         try {
-            p.load(fis);
+            property.load(fis);
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Cant't read config.properties file!");
             return;
         }
-        browser = p.getProperty("BROWSER");
-        chromePath = p.getProperty("CHROME_PATH");
-        firefoxPath = p.getProperty("FIREFOX_PATH");
+        browser = property.getProperty("BROWSER");
+        chromePath = property.getProperty("CHROME_PATH");
+        firefoxPath = property.getProperty("FIREFOX_PATH");
+        email = property.getProperty("EMAIL");
+        password = property.getProperty("PASSWORD");
 
     }
 
-    public  String getChromePath() {
+    public static String getChromePath() {
         return chromePath;
     }
 
-    public  String getBrowser() {
+    public static String getBrowser() {
         return browser;
     }
 
     public static String getFirefoxPath() {
         return firefoxPath;
+    }
+
+    public static String getEmail() {
+        return email;
+    }
+
+    public static String getPassword() {
+        return password;
     }
 }

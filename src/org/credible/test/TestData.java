@@ -50,8 +50,8 @@ public enum TestData {
     public static final String DOB = "10/05/1978";
     public static final String PHONE = "(415) 343-5465";
     public static final String ADDRESS = "842 Camden Common, Livermore, CA, USA";
-    public static final String EMAIL = "tarahssunday1845@credible.com";
-    public static final String STUDENT_PD= "Passw0rd";
+    public static final String EMAIL = configReader.getEmail();
+    public static final String STUDENT_PD= configReader.getPassword();
 
 
 

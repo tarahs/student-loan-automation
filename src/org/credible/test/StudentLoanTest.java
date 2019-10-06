@@ -21,7 +21,7 @@ import java.util.List;
 7. Password is Passw0rd
 */
 
-public class StudentLoan {
+public class StudentLoanTest {
 
     private  WebDriver driver;
     private WebDriverWait wait;
@@ -60,7 +60,6 @@ public class StudentLoan {
         WebElement student_loan_button = driver.findElement(
                 By.cssSelector("#root > div > div > div._2ZPgUqDs.ExHqkrHA > div:nth-child(1) > div > div > div.fixed-section-relative-wrapper._189b8407 > div:nth-child(1) > div._2TG9Sozx > div:nth-child(1) > div > div > div._3Ty4AGP- > button"));
         student_loan_button.click();
-
     }
 
     /**
@@ -75,13 +74,11 @@ public class StudentLoan {
     }
 
 
-
     /**
      * Fill all the fields in the education section
-     * @throws InterruptedException
      */
     @Test(priority = 4)
-    public void fill_data_to_education_section() throws InterruptedException {
+    public void fill_data_to_education_section() {
 
         //Checked rates before radio
         driver.findElement(By.cssSelector("#c148_checked_rates > div:nth-child(3) > label")).click();
@@ -179,6 +176,16 @@ public class StudentLoan {
         if(optionsToSelect.size() > 0)
             optionsToSelect.get(index).click();
 
+    }
+
+    public boolean isElementPresent(By by) {
+        try {
+            driver.findElement(by);
+            return true;
+        }
+        catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
     }
 
 }
